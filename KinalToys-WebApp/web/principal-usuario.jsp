@@ -35,7 +35,7 @@
                             <li><a href="cuenta-user.jsp">Mi cuenta</a></li>
                             <li><a href="#">Cambiar cuenta</a></li>
                             <li>
-                                <a href="#">
+                                <a href="index.jsp">
                                     <i class="fa-solid fa-right-from-bracket"></i> Salir
                                 </a>
                             </li>

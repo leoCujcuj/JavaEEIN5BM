@@ -68,7 +68,7 @@ public class ControladorCarritos {
         carrito.setFechaCreacion(fecha);
         carrito.setEstado(estado);
         carrito.setTotal(total);
-        carrito.setCodigoUsuario(codigoUsuario);
+        carrito.setCodigoCliente(codigoUsuario);
 
         em.getTransaction().begin();
         em.persist(carrito);
@@ -118,7 +118,7 @@ public class ControladorCarritos {
         System.out.print("Nuevo total (actual: " + carrito.getTotal() + "): ");
         String total = scanner.nextLine();
 
-        System.out.print("Nuevo código de usuario (actual: " + carrito.getCodigoUsuario() + "): ");
+        System.out.print("Nuevo código de usuario (actual: " + carrito.getCodigoCliente()+ "): ");
         int codigoUsuario = scanner.nextInt();
         scanner.nextLine();
 
@@ -126,7 +126,7 @@ public class ControladorCarritos {
         carrito.setFechaCreacion(fecha);
         carrito.setEstado(estado);
         carrito.setTotal(total);
-        carrito.setCodigoUsuario(codigoUsuario);
+        carrito.setCodigoCliente(codigoUsuario);
         em.getTransaction().commit();
 
         System.out.println("Carrito actualizado correctamente.");

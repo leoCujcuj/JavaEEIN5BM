@@ -4,13 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Kinal Toy's (Menú Principal)</title>
-        <!-- Icons -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <!-- Icono -->
-        <link rel="icon" href="img/kinal toys.png">
-        <!-- CSS -->
-        <link rel="stylesheet" href="css/principal.css"> 
+        <link rel="stylesheet" href="css/detalle-carrito.css">
+        <link rel="stylesheet" href="css/principal.css">
         <link rel="stylesheet" href="css/crud.css">
+        <link rel="icon" href="img/kinal toys.png">
         <link rel="stylesheet" href="css/administrador.css">
     </head>
     <body>
@@ -51,12 +49,13 @@
                     <i class="fa-solid fa-bars"></i>
                     <ul class="menu">
                         <li><a href="principal-admin.jsp">Inicio</a></li>
-                        <li><a href="usuario.jsp">Usuarios</a></li>
+                        <li><a href="cliente.jsp">Cliente</a></li>
                         <li><a href="factura.jsp">Facturas</a></li>
                         <li><a href="noticia.jsp">Noticias</a></li>
                         <li><a href="proveedor.jsp">Proveedores</a></li>
                         <li><a href="juguete.jsp">Juguetes</a></li>
                         <li><a href="cuenta.jsp">Cuentas</a></li>
+                        <li><a href="empleados.jsp">Empleados</a></li>
                         <li><a href="carrito.jsp">Carritos</a></li>
                         <li><a href="detalles-carritos.jsp">Detalles Carritos</a></li>
                     </ul>
@@ -70,32 +69,46 @@
                 </nav>
             </div>
         </header>
-
-        <main class="main-users">
-            <section class="users-section container">
+            <section class="formulario-container">
+                <main class="main-users">
+            
                 <h1 class="users-title">Proveedores</h1>
 
-                <form class="users-form">
-                    <div class="form-group">
-                        <label for="nombre-proveedor"><strong>Nombre del Proveedor:</strong></label>
-                        <input type="text" id="nombre-proveedor" name="nombre-proveedor" placeholder="Ej. Farmacias del Ahorro" required />
+                <form class="formulario-detalle">
+                    <div class="form-row">
+                        <label for="nombre-empleado"><strong>Nombre:</strong>
+                        <input type="text" id="nombre-empleado" name="nombre-empleado" placeholder="Ej. Juan" required />
+                        </label>
+                        <label for="apellido-empleado"><strong>Apellido:</strong>
+                        <input type="text" id="apellido-empleado" name="apellido-empleado" placeholder="Ej. Pérez" required />
+                        </label>
                     </div>
 
-                    <div class="form-group">
-                        <label for="telefono-proveedor"><strong>Teléfono:</strong></label>
-                        <input type="text" id="telefono-proveedor" name="telefono-proveedor" placeholder="Ej. 123456789" required />
+                    <div class="form-row">
+                        <label for="direccion-empleado"><strong>Dirección:</strong>
+                        <input type="text" id="direccion-empleado" name="direccion-empleado" placeholder="Ej. Zona 1, Ciudad" required />
+                        </label>
+                        <label for="telefono-empleado"><strong>Teléfono:</strong>                        <input type="tel" id="telefono-empleado" name="telefono-empleado" placeholder="Ej. 123456789" pattern="[0-9]{8,15}" required />
+                        </label>
                     </div>
 
-                    <div class="form-group">
-                        <label for="correo-proveedor"><strong>Correo Electrónico:</strong></label>
-                        <input type="email" id="correo-proveedor" name="correo-proveedor" placeholder="Ej. proveedor@correo.com" required />
+                    <div class="form-row">
+                        <label for="cargo-empleado"><strong>Cargo:</strong>
+                        <input type="text" id="cargo-empleado" name="cargo-empleado" placeholder="Ej. Gerente" required />
+                        </label>
+                        <label for="salario-empleado"><strong>Salario:</strong>
+                        <input type="number" step="0.01" id="salario-empleado" name="salario-empleado" placeholder="Ej. 5999.99" required />
+                        </label>
                     </div>
 
-                    <div class="form-group">
-                        <label for="direccion-proveedor"><strong>Dirección:</strong></label>
-                        <input type="text" id="direccion-proveedor" name="direccion-proveedor" placeholder="Ej. Zona 1, Guatemala" required />
+                    <div class="form-row">
+                        <label for="dpi-empleado"><strong>DPI:</strong>
+                        <input type="number" id="dpi-empleado" name="dpi-empleado" placeholder="Ej. 1234567890101" required />
+                        </label>
                     </div>
                 </form>
+
+
 
                 <div class="table-wrapper">
                     <table class="users-table">

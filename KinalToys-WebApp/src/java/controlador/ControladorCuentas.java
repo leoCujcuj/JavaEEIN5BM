@@ -64,7 +64,7 @@ public class ControladorCuentas {
         cuenta.setNombreCuenta(nombre);
         cuenta.setCorreoCuenta(correo);
         cuenta.setContrasenaCuenta(contrasena);
-        cuenta.setCodigoUsuario(codigoUsuario);
+        cuenta.setCodigoCliente(codigoUsuario);
 
         em.getTransaction().begin();
         em.persist(cuenta);
@@ -113,7 +113,7 @@ public class ControladorCuentas {
         System.out.print("Nueva contraseña (actual: " + cuenta.getContrasenaCuenta() + "): ");
         String contrasena = scanner.nextLine();
 
-        System.out.print("Nuevo código de usuario (actual: " + cuenta.getCodigoUsuario() + "): ");
+        System.out.print("Nuevo código de usuario (actual: " + cuenta.getCodigoCliente()+ "): ");
         int codigoUsuario = scanner.nextInt();
         scanner.nextLine();
 
@@ -121,7 +121,7 @@ public class ControladorCuentas {
         cuenta.setNombreCuenta(nombre);
         cuenta.setCorreoCuenta(correo);
         cuenta.setContrasenaCuenta(contrasena);
-        cuenta.setCodigoUsuario(codigoUsuario);
+        cuenta.setCodigoCliente(codigoUsuario);
         em.getTransaction().commit();
 
         System.out.println("Cuenta actualizada.");

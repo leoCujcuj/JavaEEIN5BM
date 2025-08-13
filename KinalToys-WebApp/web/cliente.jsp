@@ -11,6 +11,7 @@
         <!-- CSS -->
         <link rel="stylesheet" href="css/principal.css">
         <link rel="stylesheet" href="css/crud.css">
+        <link rel="stylesheet" href="css/detalle-carrito.css">
         <link rel="stylesheet" href="css/administrador.css">
     </head>
     <body>
@@ -51,12 +52,13 @@
                     <i class="fa-solid fa-bars"></i>
                     <ul class="menu">
                         <li><a href="principal-admin.jsp">Inicio</a></li>
-                        <li><a href="usuario.jsp">Usuarios</a></li>
+                        <li><a href="cliente.jsp">Cliente</a></li>
                         <li><a href="factura.jsp">Facturas</a></li>
                         <li><a href="noticia.jsp">Noticias</a></li>
                         <li><a href="proveedor.jsp">Proveedores</a></li>
                         <li><a href="juguete.jsp">Juguetes</a></li>
                         <li><a href="cuenta.jsp">Cuentas</a></li>
+                        <li><a href="empleados.jsp">Empleados</a></li>
                         <li><a href="carrito.jsp">Carritos</a></li>
                         <li><a href="detalles-carritos.jsp">Detalles Carritos</a></li>
                     </ul>
@@ -73,29 +75,30 @@
 
         <main class="main-users">
             <section class="users-section container">
-                <h1 class="users-title">Usuarios</h1>
+                <h1 class="users-title">Cliente</h1>
 
-                <form class="users-form">
-                    <div class="form-group">
-                        <label for="nombre-usuario"><strong>Nombre Usuario:</strong></label>
-                        <input type="text" id="nombre-usuario" name="nombre-usuario" placeholder="Ej. Jorge" required />
+                <form class="formulario-detalle">
+                    <div class="form-row">
+                        <label>Nombre Cliente:
+                            <input type="text" name="nombre-cliente" placeholder="Ej. Jorge" required>
+                        </label>
+
+                        <label>Apellido Cliente:
+                            <input type="text" name="apellido-cliente" placeholder="Ej. López" required>
+                        </label>
                     </div>
 
-                    <div class="form-group">
-                        <label for="apellido-usuario"><strong>Apellido Usuario:</strong></label>
-                        <input type="text" id="apellido-usuario" name="apellido-usuario" placeholder="Ej. López" required />
-                    </div>
+                    <div class="form-row">
+                        <label>Dirección Cliente:
+                            <input type="text" name="direccion-cliente" placeholder="Ej. 12 avenida" required>
+                        </label>
 
-                    <div class="form-group">
-                        <label for="direccion-usuario"><strong>Dirección Usuario:</strong></label>
-                        <input type="text" id="direccion-usuario" name="direccion-usuario" placeholder="Ej. 12 avenida" required />
-                    </div>
-
-                    <div class="form-group">
-                        <label for="telefono-usuario"><strong>Teléfono Usuario:</strong></label>
-                        <input type="text" id="telefono-usuario" name="telefono-usuario" placeholder="Ej. 23242-34242" required />
+                        <label>Teléfono Cliente:
+                            <input type="text" name="telefono-cliente" placeholder="Ej. 23242-34242" required>
+                        </label>
                     </div>
                 </form>
+
 
                 <div class="table-wrapper">
                     <table class="users-table">
