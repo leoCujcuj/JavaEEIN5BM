@@ -1,4 +1,4 @@
-Drop database if exists DB_KinalToys;
+-- Drop database if exists DB_KinalToys;
 create database DB_KinalToys;
 use DB_KinalToys;
 
@@ -204,7 +204,14 @@ Delimiter ;
 Delimiter $$
 create procedure sp_ListarEmpleados ()
 begin
-    select e.codigoEmpleado, e.nombreEmpleado, e.apellidoEmpleado, e.direccionEmpleado, e.telefonoEmpleado, e.cargo, e.salario, e.dpiEmpleado from Empleados e;
+    select e.codigoEmpleado, 
+    e.nombreEmpleado, 
+    e.apellidoEmpleado,
+    e.direccionEmpleado,
+    e.telefonoEmpleado, 
+    e.cargo, e.salario, 
+    e.dpiEmpleado 
+    from Empleados e;
 end$$
 Delimiter ;
 call sp_ListarEmpleados();
@@ -770,3 +777,4 @@ call sp_AgregarEmpleados('Edvin leonel', 'Cujcuj', 'Zona 1, Guatemala', '1234567
 call sp_AgregarCuenta('Empleado', 'Leonel', 'ecujcuj@gmail.com', '1', null, null, 1);
 
 call sp_validarCuentas('1', 'ecujcuj@gmail.com', '1');
+

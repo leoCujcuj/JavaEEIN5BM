@@ -4,6 +4,7 @@
     Author     : edvin
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -55,16 +56,16 @@
                 <nav class="navbar container">
                     <i class="fa-solid fa-bars"></i>
                     <ul class="menu">
-                        <li><a href="principal-admin.jsp">Inicio</a></li>
-                        <li><a href="cliente.jsp">Cliente</a></li>
-                        <li><a href="factura.jsp">Facturas</a></li>
-                        <li><a href="noticia.jsp">Noticias</a></li>
-                        <li><a href="proveedor.jsp">Proveedores</a></li>
-                        <li><a href="juguete.jsp">Juguetes</a></li>
-                        <li><a href="cuenta.jsp">Cuentas</a></li>
-                        <li><a href="empleados.jsp">Empleados</a></li>
-                        <li><a href="carrito.jsp">Carritos</a></li>
-                        <li><a href="detalles-carritos.jsp">Detalles Carritos</a></li>
+                        <li><a href="Controlador?menu=principal-admin">Inicio</a></li>
+                        <li><a href="Controlador?menu=cliente">Cliente</a></li>
+                        <li><a href="Controlador?menu=factura">Facturas</a></li>
+                        <li><a href="Controlador?menu=noticia">Noticias</a></li>
+                        <li><a href="Controlador?menu=proveedor">Proveedores</a></li>
+                        <li><a href="Controlador?menu=juguete">Juguetes</a></li>
+                        <li><a href="Controlador?menu=cuenta">Cuentas</a></li>
+                        <li><a href="Controlador?menu=empleados">Empleados</a></li>
+                        <li><a href="Controlador?menu=carrito">Carritos</a></li>
+                        <li><a href="Controlador?menu=detalles-carritos">Detalles Carritos</a></li>
                     </ul>
 
                     <form class="search-form">
@@ -80,40 +81,54 @@
             <section class="users-section container">
                 <h1 class="users-title">Empleados</h1>
 
-                <form class="formulario-detalle">
+                <form action="Controlador?menu=empleado" method="POST" class="formulario-detalle">
                     <div class="form-row">
                         <label>Nombre:
-                            <input type="text" name="nombre" placeholder="Ej. Leonel" required>
+                            <input type="text" name="txtNombre" placeholder="Ej. Leonel" required>
                         </label>
 
                         <label>Apellido:
-                            <input type="text" name="apellido" placeholder="Ej. Pérez" required>
+                            <input type="text" name="txtApellido" placeholder="Ej. Pérez" required>
                         </label>
                     </div>
 
                     <div class="form-row">
                         <label>Dirección:
-                            <input type="text" name="direccion" placeholder="Ej. Zona 1, Ciudad" required>
+                            <input type="text" name="txtDireccion" placeholder="Ej. Zona 1, Ciudad" required>
                         </label>
 
                         <label>Teléfono:
-                            <input type="tel" name="telefono" placeholder="Ej. 123456789" pattern="[0-9]{8,15}" required>
+                            <input type="tel" name="txtTelefono" placeholder="Ej. 123456789" pattern="[0-9]{8,15}" required>
                         </label>
                     </div>
 
                     <div class="form-row">
                         <label>Cargo:
-                            <input type="text" name="cargo" placeholder="Ej. Gerente" required>
+                            <input type="text" name="txtCargo" placeholder="Ej. Gerente" required>
                         </label>
 
                         <label>Salario:
-                            <input type="number" step="0.01" name="salario" placeholder="Ej. 5999.99" required>
+                            <input type="number" step="0.01" name="txtSalario" placeholder="Ej. 5999.99" required>
                         </label>
                     </div>
                     <div class="form-row">
                         <label>DPI:
-                            <input type="number" name="dpi" placeholder="Ej. 1234567890101" required>
+                            <input type="number" name="txtDPIEmpleado" placeholder="Ej. 1234567890101" required>
                         </label>
+                    </div>
+                    <div class="crud-buttons">
+                        <button class="btn-crud" type="submit" name="accion" value="Agregar">Agregar</button>
+                    </div>
+                </form>
+                
+                <form action="Controlador?menu=empleado" method="POST" class="formulario-detalle">
+                    <div class="crud-buttons">
+                        <button class="btn-crud" type="submit" name="accion" value="Agregar">Agregar</button>
+                        <button class="btn-crud" type="submit" name="accion" value="Listar">Listar</button>
+                        <input type="text" class="input-search" placeholder="Ingrese búsqueda" />
+                        <button class="btn-crud">Buscar</button>
+                        <button class="btn-crud">Eliminar</button>
+                        <button class="btn-crud">Actualizar</button>
                     </div>
                 </form>
 
@@ -124,32 +139,29 @@
                             <tr>
                                 <th>Código Empleado</th>
                                 <th>Nombre</th>
-                                <th>Teléfono</th>
-                                <th>Correo</th>
+                                <th>Apellido</th>
                                 <th>Dirección</th>
-                                <th>Código Cuenta</th>
+                                <th>Teléfono</th>
+                                <th>Cargo</th>
+                                <th>Salario</th>
+                                <th>Dpi</th>
                             </tr>
                         </thead>
                         <tbody id="detalle-empleado">
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
+                            <c:forEach var="empleado" items="${empleados}">
+                                <tr>
+                                    <td>${empleado.codigoEmpleado}</td>
+                                    <td>${empleado.nombreEmpleado}</td>
+                                    <td>${empleado.apellidoEmpleado}</td>
+                                    <td>${empleado.direccionEmpleado}</td>
+                                    <td>${empleado.telefonoEmpleado}</td>
+                                    <td>${empleado.cargo}</td>
+                                    <td>${empleado.salario}</td>
+                                    <td>${empleado.dpiEmpleado}</td>
+                                </tr>
+                            </c:forEach>
                         </tbody>
                     </table>
-                </div>
-
-                <div class="crud-buttons">
-                    <button class="btn-crud">Agregar</button>
-                    <button class="btn-crud">Listar</button>
-                    <button class="btn-crud">Buscar</button>
-                    <input type="text" class="input-search" placeholder="Ingrese búsqueda" />
-                    <button class="btn-crud">Eliminar</button>
-                    <button class="btn-crud">Actualizar</button>
                 </div>
             </section>
         </main>

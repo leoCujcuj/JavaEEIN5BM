@@ -75,12 +75,12 @@
             <div class="overlay-container" id="overlayCon">
                 <div class="overlay">
                     <div class="overlay-panel overlay-left">
-                        <h1>¡Hola, amigo!</h1>
+                        <h1>¡Bienvenido de nuevo!</h1>
                         <p>Para mantenerte conectado con nosotros, por favor, inicia sesión con tu información personal</p>
                         <button>Iniciar sesión</button>
                     </div>
                     <div class="overlay-panel overlay-right">
-                        <h1>¡Bienvenido de nuevo!</h1>
+                        <h1>¡Hola, amigo!</h1>
                         <p>Ingresa tus datos personales y comienza tu viaje con nosotros</p>
                         <button>Registrarse</button>
                     </div>

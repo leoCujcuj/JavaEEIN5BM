@@ -44,17 +44,17 @@ public class Empleados implements Serializable {
     private Double salario;
     
     @Column(name = "dpiEmpleado")
-    private String dpiEmpledo;
+    private String dpiEmpleado;
 
     public Empleados() {
     }
 
-    public String getDpiEmpledo() {
-        return dpiEmpledo;
+    public String getDpiEmpleado() {
+        return dpiEmpleado;
     }
 
-    public void setDpiEmpledo(String dpiEmpledo) {
-        this.dpiEmpledo = dpiEmpledo;
+    public void setDpiEmpleado(String dpiEmpledo) {
+        this.dpiEmpleado = dpiEmpledo;
     }
     
     public Integer getCodigoEmpleado() {
