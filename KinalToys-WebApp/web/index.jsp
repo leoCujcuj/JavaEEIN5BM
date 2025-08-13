@@ -12,16 +12,17 @@
         <link rel="stylesheet" href="css/login.css">
     </head>
     <body>
+        <%-- Crear una nueva Cuenta--%> 
         <div class="container" id="container">
             <div class="form-container sign-up-container">
-                <form action="principal-usuario.jsp">
-                    <h1>Create Account</h1>
+                <form action="Validar" method="POST">
+                    <h1>Crear cuenta</h1>
                     <div class="social-container">
                         <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
                         <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                     </div>
-                    <span>or use your email for registration</span>
+                    <span>o usa tu correo electrónico para registrarte</span>
                     <div class="infield">
                         <input type="text" placeholder="Name" />
                         <label></label>
@@ -34,41 +35,54 @@
                         <input type="password" placeholder="Password" />
                         <label></label>
                     </div>
-                    <button>Sign Up</button>
+                    <div class="infield">
+                        <input type="text" placeholder="DPI" name="dpi" required/>
+                        <label></label>
+                    </div>
+                    <button type="submit" name="accion" value="Ingresar">Registrarse</button>
                 </form>
             </div>
+            
+            
+            <%-- Inicio de Sesion--%>
             <div class="form-container sign-in-container">
-                <form action="principal-admin.jsp">
-                    <h1>Sign In</h1>
+                <form action="${pageContext.request.contextPath}/Validar" method="POST">
+                    <h1>Inicio de Sesión</h1>
                     <div class="social-container">
                         <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
                         <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                     </div>
-                    <span>or use your account</span>
+                    <span>o usa tu cuenta</span>
                     <div class="infield">
                         <input type="email" placeholder="Email" name="email"/>
                         <label></label>
                     </div>
                     <div class="infield">
-                        <input type="password" placeholder="Password" />
+                        <input type="password" placeholder="Password" name="Password" />
                         <label></label>
                     </div>
-                    <a href="#" class="forgot">Forgot your password?</a>
-                    <button>Sign In</button>
+                    <div class="infield">
+                        <input type="text" name="dpi" placeholder="DPI" required>
+                        <label></label>
+                    </div>
+                    <a href="#" class="forgot">¿Olvidaste tu contraseña?</a>
+                    <button type="submit" name="accion" value="Ingresar">Iniciar sesión</button>
                 </form>
             </div>
+                    
+                    
             <div class="overlay-container" id="overlayCon">
                 <div class="overlay">
                     <div class="overlay-panel overlay-left">
-                        <h1>Welcome Back!</h1>
-                        <p>To keep connected with us please login with your personal info</p>
-                        <button>Sign In</button>
+                        <h1>¡Hola, amigo!</h1>
+                        <p>Para mantenerte conectado con nosotros, por favor, inicia sesión con tu información personal</p>
+                        <button>Iniciar sesión</button>
                     </div>
                     <div class="overlay-panel overlay-right">
-                        <h1>Hello, Friend!</h1>
-                        <p>Enter your personal details and start journey with us</p>
-                        <button>Sign Up</button>
+                        <h1>¡Bienvenido de nuevo!</h1>
+                        <p>Ingresa tus datos personales y comienza tu viaje con nosotros</p>
+                        <button>Registrarse</button>
                     </div>
                 </div>
                 <button id="overlayBtn"></button>

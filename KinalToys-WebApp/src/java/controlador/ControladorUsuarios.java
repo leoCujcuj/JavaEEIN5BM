@@ -1,6 +1,6 @@
 
 package controlador;
-import modelo.Usuarios;
+import modelo.Clientes;
 import javax.persistence.*;
 import java.util.List;
 import java.util.Scanner;
@@ -59,11 +59,11 @@ public class ControladorUsuarios {
         System.out.print("Ingrese teléfono (9 dígitos): ");
         String telefono = scanner.nextLine();
 
-        Usuarios usuario = new Usuarios();
-        usuario.setNombreUsuario(nombre);
-        usuario.setApellidoUsuario(apellido);
-        usuario.setDireccionUsuario(direccion);
-        usuario.setTelefonoUsuario(telefono);
+        Clientes usuario = new Clientes();
+        usuario.setNombreCliente(nombre);
+        usuario.setApellidoCliente(apellido);
+        usuario.setDireccionCliente(direccion);
+        usuario.setTelefonoCliente(telefono);
 
         em.getTransaction().begin();
         em.persist(usuario);
@@ -73,7 +73,7 @@ public class ControladorUsuarios {
     }
 
     private void listarUsuarios() {
-        List<Usuarios> usuarios = em.createQuery("SELECT u FROM Usuarios u", Usuarios.class).getResultList();
+        List<Clientes> usuarios = em.createQuery("SELECT u FROM Usuarios u", Clientes.class).getResultList();
         System.out.println("\n--- Lista de Usuarios ---");
         usuarios.forEach(System.out::println);
     }
@@ -83,7 +83,7 @@ public class ControladorUsuarios {
         int id = scanner.nextInt();
         scanner.nextLine(); // limpiar buffer
 
-        Usuarios usuario = em.find(Usuarios.class, id);
+        Clientes usuario = em.find(Clientes.class, id);
         if (usuario != null) {
             System.out.println("Usuario encontrado:");
             System.out.println(usuario);
@@ -97,29 +97,29 @@ public class ControladorUsuarios {
         int id = scanner.nextInt();
         scanner.nextLine();
 
-        Usuarios usuario = em.find(Usuarios.class, id);
+        Clientes usuario = em.find(Clientes.class, id);
         if (usuario == null) {
             System.out.println("Usuario no encontrado.");
             return;
         }
 
-        System.out.print("Nuevo nombre (actual: " + usuario.getNombreUsuario() + "): ");
+        System.out.print("Nuevo nombre (actual: " + usuario.getNombreCliente()+ "): ");
         String nombre = scanner.nextLine();
 
-        System.out.print("Nuevo apellido (actual: " + usuario.getApellidoUsuario() + "): ");
+        System.out.print("Nuevo apellido (actual: " + usuario.getApellidoCliente()+ "): ");
         String apellido = scanner.nextLine();
 
-        System.out.print("Nueva dirección (actual: " + usuario.getDireccionUsuario() + "): ");
+        System.out.print("Nueva dirección (actual: " + usuario.getDireccionCliente()+ "): ");
         String direccion = scanner.nextLine();
 
-        System.out.print("Nuevo teléfono (actual: " + usuario.getTelefonoUsuario() + "): ");
+        System.out.print("Nuevo teléfono (actual: " + usuario.getTelefonoCliente()+ "): ");
         String telefono = scanner.nextLine();
 
         em.getTransaction().begin();
-        usuario.setNombreUsuario(nombre);
-        usuario.setApellidoUsuario(apellido);
-        usuario.setDireccionUsuario(direccion);
-        usuario.setTelefonoUsuario(telefono);
+        usuario.setNombreCliente(nombre);
+        usuario.setApellidoCliente(apellido);
+        usuario.setDireccionCliente(direccion);
+        usuario.setTelefonoCliente(telefono);
         em.getTransaction().commit();
 
         System.out.println("Usuario actualizado.");
@@ -130,7 +130,7 @@ public class ControladorUsuarios {
         int id = scanner.nextInt();
         scanner.nextLine();
 
-        Usuarios usuario = em.find(Usuarios.class, id);
+        Clientes usuario = em.find(Clientes.class, id);
         if (usuario == null) {
             System.out.println("Usuario no encontrado.");
             return;

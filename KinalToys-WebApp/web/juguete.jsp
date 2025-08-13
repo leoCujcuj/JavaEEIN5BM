@@ -8,103 +8,104 @@
         <link rel="icon" href="img/kinal toys.png">
         <link rel="stylesheet" href="css/principal.css">
         <link rel="stylesheet" href="css/crud.css">
+        <link rel="stylesheet" href="css/detalle-carrito.css">
         <link rel="stylesheet" href="css/administrador.css">
     </head>
     <body>
         <header>
-            <header>
-                <div class="container-hero">
-                    <div class="container hero">
-                        <div class="customer-support">
-                            <i class="fa-solid fa-headset"></i>
-                            <div class="content-customer-support">
-                                <span class="text">Soporte al cliente</span>
-                                <span class="number">502-3110-0319</span>
-                            </div>
+            <div class="container-hero">
+                <div class="container hero">
+                    <div class="customer-support">
+                        <i class="fa-solid fa-headset"></i>
+                        <div class="content-customer-support">
+                            <span class="text">Soporte al cliente</span>
+                            <span class="number">502-3110-0319</span>
                         </div>
+                    </div>
 
-                        <div class="container-logo">
-                            <h1 class="logo"><a href="/">Kinal Toy's</a></h1>
-                        </div>
+                    <div class="container-logo">
+                        <h1 class="logo"><a href="/">Kinal Toy's</a></h1>
+                    </div>
 
-                        <div class="container-user">
-                            <div class="user-menu">
-                                <i class="fa-solid fa-user"></i>
-                                <ul class="user-dropdown">
-                                    <li><a href="cuenta-admin.jsp">Mi cuenta</a></li>
-                                    <li><a href="#">Cambiar cuenta</a></li>
-                                    <li>
-                                        <a href="index.jsp">
-                                            <i class="fa-solid fa-right-from-bracket"></i> Salir
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                    <div class="container-user">
+                        <div class="user-menu">
+                            <i class="fa-solid fa-user"></i>
+                            <ul class="user-dropdown">
+                                <li><a href="cuenta-admin.jsp">Mi cuenta</a></li>
+                                <li><a href="#">Cambiar cuenta</a></li>
+                                <li>
+                                    <a href="index.jsp">
+                                        <i class="fa-solid fa-right-from-bracket"></i> Salir
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="container-navbar">
-                    <nav class="navbar container">
-                        <i class="fa-solid fa-bars"></i>
-                        <ul class="menu">
-                            <li><a href="principal-admin.jsp">Inicio</a></li>
-                            <li><a href="usuario.jsp">Usuarios</a></li>
-                            <li><a href="factura.jsp">Facturas</a></li>
-                            <li><a href="noticia.jsp">Noticias</a></li>
-                            <li><a href="proveedor.jsp">Proveedores</a></li>
-                            <li><a href="juguete.jsp">Juguetes</a></li>
-                            <li><a href="cuenta.jsp">Cuentas</a></li>
-                            <li><a href="carrito.jsp">Carritos</a></li>
-                            <li><a href="detalles-carritos.jsp">Detalles Carritos</a></li>
-                        </ul>
+            <div class="container-navbar">
+                <nav class="navbar container">
+                    <i class="fa-solid fa-bars"></i>
+                    <ul class="menu">
+                        <li><a href="principal-admin.jsp">Inicio</a></li>
+                        <li><a href="cliente.jsp">Cliente</a></li>
+                        <li><a href="factura.jsp">Facturas</a></li>
+                        <li><a href="noticia.jsp">Noticias</a></li>
+                        <li><a href="proveedor.jsp">Proveedores</a></li>
+                        <li><a href="juguete.jsp">Juguetes</a></li>
+                        <li><a href="cuenta.jsp">Cuentas</a></li>
+                        <li><a href="empleados.jsp">Empleados</a></li>
+                        <li><a href="carrito.jsp">Carritos</a></li>
+                        <li><a href="detalles-carritos.jsp">Detalles Carritos</a></li>
+                    </ul>
 
-                        <form class="search-form">
-                            <input type="search" placeholder="Buscar..." />
-                            <button class="btn-search">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </button>
-                        </form>
-                    </nav>
-                </div>
-            </header>
+                    <form class="search-form">
+                        <input type="search" placeholder="Buscar..." />
+                        <button class="btn-search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+                </nav>
+            </div>
         </header>
 
         <main class="main-users">
             <section class="users-section container">
                 <h1 class="users-title">Juguetes</h1>
 
-                <form class="users-form">
-                    <div class="form-group">
-                        <label for="nombre-juguete"><strong>Nombre Juguete:</strong></label>
-                        <input type="text" id="nombre-juguete" name="nombre-juguete" placeholder="Ej. Carrito Hot Wheels" required />
+                <form class="formulario-detalle">
+                    <div class="form-row">
+                        <label>Nombre Juguete:
+                            <input type="text" name="nombre-juguete" placeholder="Ej. Carrito Hot Wheels" required>
+                        </label>
+
+                        <label>Precio:
+                            <input type="number" step="0.01" name="precio-juguete" placeholder="Ej. 199.99" required>
+                        </label>
                     </div>
 
-                    <div class="form-group">
-                        <label for="precio-juguete"><strong>Precio:</strong></label>
-                        <input type="number" step="0.01" id="precio-juguete" name="precio-juguete" placeholder="Ej. 199.99" required />
+                    <div class="form-row">
+                        <label>Categoría:
+                            <input type="text" name="categoria-juguete" placeholder="Ej. Vehículos" required>
+                        </label>
+
+                        <label>Marca:
+                            <input type="text" name="marca-juguete" placeholder="Ej. Mafex" required>
+                        </label>
                     </div>
 
-                    <div class="form-group">
-                        <label for="categoria-juguete"><strong>Categoría:</strong></label>
-                        <input type="text" id="categoria-juguete" name="categoria-juguete" placeholder="Ej. Vehículos" required />
-                    </div>
+                    <div class="form-row">
+                        <label>Stock:
+                            <input type="number" name="stock-juguete" placeholder="Ej. 50" required>
+                        </label>
 
-                    <div class="form-group">
-                        <label for="marca-juguete"><strong>Marca:</strong></label>
-                        <input type="text" id="marca-juguete" name="marca-juguete" placeholder="Ej. Mafex" required />
-                    </div>
-
-                    <div class="form-group">
-                        <label for="stock-juguete"><strong>Stock:</strong></label>
-                        <input type="number" id="stock-juguete" name="stock-juguete" placeholder="Ej. 50" required />
-                    </div>
-
-                    <div class="form-group">
-                        <label for="codigo-noticia"><strong>Código Noticia:</strong></label>
-                        <input type="number" id="codigo-noticia" name="codigo-noticia" placeholder="Ej. 1" required />
+                        <label>Código Noticia:
+                            <input type="number" name="codigo-noticia" placeholder="Ej. 1" required>
+                        </label>
                     </div>
                 </form>
+
 
                 <div class="table-wrapper">
                     <table class="users-table">
@@ -138,7 +139,7 @@
             </section>
         </main>
 
-<footer class="footer">
+        <footer class="footer">
             <div class="container container-footer">
                 <div class="menu-footer">
                     <div class="contact-info">

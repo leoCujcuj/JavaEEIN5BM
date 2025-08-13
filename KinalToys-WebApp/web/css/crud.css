@@ -15,6 +15,7 @@
 /* Formulario */
 .users-form {
     display: grid;
+    background-color: #fff;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     margin-bottom: 3rem;
@@ -23,6 +24,7 @@
 .form-group {
     display: flex;
     flex-direction: column;
+    padding-top: 8px;
 }
 
 .form-group label {
@@ -111,7 +113,7 @@
 
 .form-group select {
     padding: 0.8rem 1rem;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     border: 1.5px solid #ccc;
     border-radius: 0.6rem;
     transition: border-color 0.3s ease;

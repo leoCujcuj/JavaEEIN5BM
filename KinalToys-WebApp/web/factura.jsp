@@ -9,6 +9,7 @@
         <!-- Icono -->
         <link rel="icon" href="img/kinal toys.png">
         <!-- CSS -->
+        <link rel="stylesheet" href="css/detalle-carrito.css">
         <link rel="stylesheet" href="css/principal.css">
         <link rel="stylesheet" href="css/crud.css">
         <link rel="stylesheet" href="css/administrador.css">
@@ -51,12 +52,13 @@
                     <i class="fa-solid fa-bars"></i>
                     <ul class="menu">
                         <li><a href="principal-admin.jsp">Inicio</a></li>
-                        <li><a href="usuario.jsp">Usuarios</a></li>
+                        <li><a href="cliente.jsp">Cliente</a></li>
                         <li><a href="factura.jsp">Facturas</a></li>
                         <li><a href="noticia.jsp">Noticias</a></li>
                         <li><a href="proveedor.jsp">Proveedores</a></li>
                         <li><a href="juguete.jsp">Juguetes</a></li>
                         <li><a href="cuenta.jsp">Cuentas</a></li>
+                        <li><a href="empleados.jsp">Empleados</a></li>
                         <li><a href="carrito.jsp">Carritos</a></li>
                         <li><a href="detalles-carritos.jsp">Detalles Carritos</a></li>
                     </ul>
@@ -75,31 +77,33 @@
             <section class="users-section container">
                 <h1 class="users-title">Facturas</h1>
 
-                <form class="users-form">
-                    <div class="form-group">
-                        <label for="fecha-emision"><strong>Fecha de Emisión:</strong></label>
-                        <input type="date" id="fecha-emision" name="fecha-emision" required />
+                <form class="formulario-detalle">
+                    <div class="form-row">
+                        <label>Fecha de Emisión:
+                            <input type="date" name="fecha-emision" required>
+                        </label>
+                        <div class="form-group">
+                            <label for="metodo-pago" >Método de Pago:
+                                <select id="metodo-pago" name="metodo-pago" required>
+                                <option value="">Seleccione</option>
+                                <option value="Efectivo">Efectivo</option>
+                                <option value="Credito">Crédito</option>
+                            </select>
+                            </label>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="metodo-pago"><strong>Método de Pago:</strong></label>
-                        <select id="metodo-pago" name="metodo-pago" required>
-                            <option value="">Seleccione</option>
-                            <option value="Efectivo">Efectivo</option>
-                            <option value="Credito">Crédito</option>
-                        </select>
-                    </div>
+                    <div class="form-row">
+                        <label>Total:
+                            <input type="number" name="total" step="0.01" placeholder="Ej. 150.75" required>
+                        </label>
 
-                    <div class="form-group">
-                        <label for="total"><strong>Total:</strong></label>
-                        <input type="number" id="total" name="total" step="0.01" placeholder="Ej. 150.75" required />
-                    </div>
-
-                    <div class="form-group">
-                        <label for="codigo-usuario"><strong>Código de Usuario:</strong></label>
-                        <input type="number" id="codigo-usuario" name="codigo-usuario" placeholder="Ej. 1" required />
+                        <label>Código de Usuario:
+                            <input type="number" name="codigo-usuario" placeholder="Ej. 1" required>
+                        </label>
                     </div>
                 </form>
+
 
                 <div class="table-wrapper">
                     <table class="users-table">

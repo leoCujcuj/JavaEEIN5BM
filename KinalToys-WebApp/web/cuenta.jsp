@@ -11,6 +11,7 @@
         <!-- CSS -->
         <link rel="stylesheet" href="css/principal.css">
         <link rel="stylesheet" href="css/crud.css">
+        <link rel="stylesheet" href="css/detalle-carrito.css">
         <link rel="stylesheet" href="css/administrador.css">
     </head>
     <body>
@@ -51,12 +52,13 @@
                     <i class="fa-solid fa-bars"></i>
                     <ul class="menu">
                         <li><a href="principal-admin.jsp">Inicio</a></li>
-                        <li><a href="usuario.jsp">Usuarios</a></li>
+                        <li><a href="cliente.jsp">Cliente</a></li>
                         <li><a href="factura.jsp">Facturas</a></li>
                         <li><a href="noticia.jsp">Noticias</a></li>
                         <li><a href="proveedor.jsp">Proveedores</a></li>
                         <li><a href="juguete.jsp">Juguetes</a></li>
                         <li><a href="cuenta.jsp">Cuentas</a></li>
+                        <li><a href="empleados.jsp">Empleados</a></li>
                         <li><a href="carrito.jsp">Carritos</a></li>
                         <li><a href="detalles-carritos.jsp">Detalles Carritos</a></li>
                     </ul>
@@ -75,27 +77,28 @@
             <section class="users-section container">
                 <h1 class="users-title">Cuentas</h1>
 
-                <form class="users-form">
-                    <div class="form-group">
-                        <label for="nombre-cuenta"><strong>Nombre de Cuenta:</strong></label>
-                        <input type="text" id="nombre-cuenta" name="nombre-cuenta" placeholder="Ej. cuenta_admin" required />
+                <form class="formulario-detalle">
+                    <div class="form-row">
+                        <label>Nombre de Cuenta:
+                            <input type="text" name="nombre-cuenta" placeholder="Ej. cuenta_admin" required>
+                        </label>
+
+                        <label>Correo de Cuenta:
+                            <input type="email" name="correo-cuenta" placeholder="ejemplo@correo.com" required>
+                        </label>
                     </div>
 
-                    <div class="form-group">
-                        <label for="correo-cuenta"><strong>Correo de Cuenta:</strong></label>
-                        <input type="email" id="correo-cuenta" name="correo-cuenta" placeholder="ejemplo@correo.com" required />
-                    </div>
+                    <div class="form-row">
+                        <label>Contraseña:
+                            <input type="password" name="contrasena-cuenta" placeholder="Ej. miClave123" required>
+                        </label>
 
-                    <div class="form-group">
-                        <label for="contrasena-cuenta"><strong>Contraseña:</strong></label>
-                        <input type="password" id="contrasena-cuenta" name="contrasena-cuenta" placeholder="Ej. miClave123" required />
-                    </div>
-
-                    <div class="form-group">
-                        <label for="codigo-usuario"><strong>Código de Usuario:</strong></label>
-                        <input type="number" id="codigo-usuario" name="codigo-usuario" placeholder="Ej. 1" required />
+                        <label>Código de Usuario:
+                            <input type="number" name="codigo-usuario" placeholder="Ej. 1" required>
+                        </label>
                     </div>
                 </form>
+
 
                 <div class="table-wrapper">
                     <table class="users-table">

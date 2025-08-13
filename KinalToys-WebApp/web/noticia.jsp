@@ -11,6 +11,7 @@
         <!-- CSS -->
         <link rel="stylesheet" href="css/principal.css">
         <link rel="stylesheet" href="css/crud.css">
+        <link rel="stylesheet" href="css/detalle-carrito.css">
         <link rel="stylesheet" href="css/administrador.css">
     </head>
     <body>
@@ -51,12 +52,13 @@
                     <i class="fa-solid fa-bars"></i>
                     <ul class="menu">
                         <li><a href="principal-admin.jsp">Inicio</a></li>
-                        <li><a href="usuario.jsp">Usuarios</a></li>
+                        <li><a href="cliente.jsp">Cliente</a></li>
                         <li><a href="factura.jsp">Facturas</a></li>
                         <li><a href="noticia.jsp">Noticias</a></li>
                         <li><a href="proveedor.jsp">Proveedores</a></li>
                         <li><a href="juguete.jsp">Juguetes</a></li>
                         <li><a href="cuenta.jsp">Cuentas</a></li>
+                        <li><a href="empleados.jsp">Empleados</a></li>
                         <li><a href="carrito.jsp">Carritos</a></li>
                         <li><a href="detalles-carritos.jsp">Detalles Carritos</a></li>
                     </ul>
@@ -75,27 +77,28 @@
         <section class="users-section container">
             <h1 class="users-title">Noticias</h1>
  
-            <form class="users-form">
-                <div class="form-group">
-                    <label for="encabezado-noticia"><strong>Encabezado:</strong></label>
-                    <input type="text" id="encabezado-noticia" name="encabezado-noticia" placeholder="Ej. Nueva .." required />
+            <form class="formulario-detalle">
+                <div class="form-row">
+                    <label>Encabezado:
+                        <input type="text" name="encabezado-noticia" placeholder="Ej. Nueva ..." required>
+                    </label>
+
+                    <label>Información:
+                        <input type="text" name="informacion-noticia" placeholder="Ej. La nueva ..." required>
+                    </label>
                 </div>
- 
-                <div class="form-group">
-                    <label for="informacion-noticia"><strong>Información:</strong></label>
-                    <input type="text" id="informacion-noticia" name="informacion-noticia" placeholder="Ej. La nueva .." required />
-                </div>
- 
-                <div class="form-group">
-                    <label for="categoria-noticia"><strong>Categoría:</strong></label>
-                    <input type="text" id="categoria-noticia" name="categoria-noticia" placeholder="Ej. Novedades" required />
-                </div>
- 
-                <div class="form-group">
-                    <label for="fecha-noticia"><strong>Fecha Noticia:</strong></label>
-                    <input type="date" id="fecha-noticia" name="fecha-noticia" required />
+
+                <div class="form-row">
+                    <label>Categoría:
+                        <input type="text" name="categoria-noticia" placeholder="Ej. Novedades" required>
+                    </label>
+
+                    <label>Fecha Noticia:
+                        <input type="date" name="fecha-noticia" required>
+                    </label>
                 </div>
             </form>
+
  
             <div class="table-wrapper">
                 <table class="users-table">

@@ -11,45 +11,50 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Cuentas")
 public class Cuentas implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "codigoCuenta")
-    private int codigoCuenta;
+    private Integer codigoCuenta;
+
+    @Column(name = "rol")
+    private String rol;
 
     @Column(name = "nombreCuenta")
     private String nombreCuenta;
 
     @Column(name = "correoCuenta")
     private String correoCuenta;
-    
+
     @Column(name = "contrasenaCuenta")
     private String contrasenaCuenta;
-    
-    @Column(name = "codigoUsuario")
-    private Integer codigoUsuario;
-    
-    @Column(name = "fotoPerfil")
+
+    @Column(name = "fotoperfil")
     private String fotoPerfil;
-    
-    
+
+    @Column(name = "codigoCliente")
+    private Integer codigoCliente;
+
+    @Column(name = "codigoEmpleado")
+    private Integer codigoEmpleado;
+
     public Cuentas() {
-        
     }
 
-    public String getFotoPerfil() {
-        return fotoPerfil;
-    }
-
-    public void setFotoPerfil(String fotoPerfil) {
-        this.fotoPerfil = fotoPerfil;
-    }
-    
-    public int getCodigoCuenta() {
+    public Integer getCodigoCuenta() {
         return codigoCuenta;
     }
 
-    public void setCodigoCuenta(int codigoCuenta) {
+    public void setCodigoCuenta(Integer codigoCuenta) {
         this.codigoCuenta = codigoCuenta;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
     }
 
     public String getNombreCuenta() {
@@ -76,16 +81,33 @@ public class Cuentas implements Serializable {
         this.contrasenaCuenta = contrasenaCuenta;
     }
 
-    public Integer getCodigoUsuario() {
-        return codigoUsuario;
+    public String getFotoPerfil() {
+        return fotoPerfil;
     }
 
-    public void setCodigoUsuario(Integer codigoUsuario) {
-        this.codigoUsuario = codigoUsuario;
+    public void setFotoPerfil(String fotoPerfil) {
+        this.fotoPerfil = fotoPerfil;
+    }
+
+    public Integer getCodigoCliente() {
+        return codigoCliente;
+    }
+
+    public void setCodigoCliente(Integer codigoCliente) {
+        this.codigoCliente = codigoCliente;
+    }
+
+    public Integer getCodigoEmpleado() {
+        return codigoEmpleado;
+    }
+
+    public void setCodigoEmpleado(Integer codigoEmpleado) {
+        this.codigoEmpleado = codigoEmpleado;
     }
 
     @Override
     public String toString() {
-        return "Cuentas{" + "codigoCuenta=" + codigoCuenta + ", nombreCuenta=" + nombreCuenta + ", correoCuenta=" + correoCuenta + ", contrasenaCuenta=" + contrasenaCuenta + ", codigoUsuario=" + codigoUsuario + '}';
+        return "Cuentas{" + "codigoCuenta=" + codigoCuenta + ", rol=" + rol + ", nombreCuenta=" + nombreCuenta + ", correoCuenta=" + correoCuenta + ", contrasenaCuenta=" + contrasenaCuenta + ", fotoPerfil=" + fotoPerfil + ", codigoCliente=" + codigoCliente + ", codigoEmpleado=" + codigoEmpleado + '}';
     }
+    
 }

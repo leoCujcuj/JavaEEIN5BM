@@ -9,6 +9,7 @@
         <!-- Icono -->
         <link rel="icon" href="img/kinal toys.png">
         <!-- CSS -->
+        <link rel="stylesheet" href="css/detalle-carrito.css">
         <link rel="stylesheet" href="css/principal.css">
         <link rel="stylesheet" href="css/crud.css">
         <link rel="stylesheet" href="css/administrador.css">
@@ -51,12 +52,13 @@
                     <i class="fa-solid fa-bars"></i>
                     <ul class="menu">
                         <li><a href="principal-admin.jsp">Inicio</a></li>
-                        <li><a href="usuario.jsp">Usuarios</a></li>
+                        <li><a href="cliente.jsp">Cliente</a></li>
                         <li><a href="factura.jsp">Facturas</a></li>
                         <li><a href="noticia.jsp">Noticias</a></li>
                         <li><a href="proveedor.jsp">Proveedores</a></li>
                         <li><a href="juguete.jsp">Juguetes</a></li>
                         <li><a href="cuenta.jsp">Cuentas</a></li>
+                        <li><a href="empleados.jsp">Empleados</a></li>
                         <li><a href="carrito.jsp">Carritos</a></li>
                         <li><a href="detalles-carritos.jsp">Detalles Carritos</a></li>
                     </ul>
@@ -75,32 +77,33 @@
             <section class="users-section container">
                 <h1 class="users-title">Carritos</h1>
 
-                <form class="users-form">
-                    <div class="form-group">
-                        <label for="fecha-creacion"> <strong> Fecha de Creación</strong></label>
-                        <input type="datetime-local" id="fecha-creacion" name="fecha-creacion" required />
+                <form class="formulario-detalle">
+                    <div class="form-row">
+                        <label>Fecha de Creación:
+                            <input type="datetime-local" name="fecha-creacion" required>
+                        </label>
+                        <div class="form-group">
+                            <label>Estado:
+                                <select name="estado" required>
+                                    <option value="">Seleccione</option>
+                                    <option value="Activo">Activo</option>
+                                    <option value="Comprado">Comprado</option>
+                                </select>
+                            </label>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="estado"><strong>Estado:</strong></label>
-                        <select id="estado" name="estado" required>
-                            <option value="">Seleccione</option>
-                            <option value="Activo">Activo</option>
-                            <option value="Comprado">Comprado</option>
-                        </select>
-                    </div>
+                    <div class="form-row">
+                        <label>Total (Q):
+                            <input type="number" name="total" step="0.01" min="0" placeholder="Ej. 599.99" required>
+                        </label>
 
-                    <div class="form-group">
-                        <label for="total"> <strong>Total (Q)</strong></label>
-                        <input type="number" id="total" name="total" step="0.01" min="0" placeholder="Ej. 599.99"
-                               required />
-                    </div>
-
-                    <div class="form-group">
-                        <label for="codigo-usuario"> <strong>Código de Usuario</strong></label>
-                        <input type="number" id="codigo-usuario" name="codigo-usuario" placeholder="Ej. 1" required />
+                        <label>Código de Usuario:
+                            <input type="number" name="codigo-usuario" placeholder="Ej. 1" required>
+                        </label>
                     </div>
                 </form>
+
 
                 <div class="table-wrapper">
                     <table class="users-table">
