@@ -87,6 +87,7 @@
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
+    padding-bottom: 35px;
 }
 
 .btn-crud {
