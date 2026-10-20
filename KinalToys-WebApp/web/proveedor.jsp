@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kinal Toy's (Menú Principal)</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="css/detalle-carrito.css">
+        <link rel="stylesheet" href="css/principal.css">
+        <link rel="stylesheet" href="css/crud.css">
+        <link rel="icon" href="img/kinal toys.png">
+        <link rel="stylesheet" href="css/administrador.css">
+    </head>
+    <body>
+        <header>
+            <div class="container-hero">
+                <div class="container hero">
+                    <div class="customer-support">
+                        <i class="fa-solid fa-headset"></i>
+                        <div class="content-customer-support">
+                            <span class="text">Soporte al cliente</span>
+                            <span class="number">502-3110-0319</span>
+                        </div>
+                    </div>
+
+                    <div class="container-logo">
+                        <h1 class="logo"><a href="/">Kinal Toy's</a></h1>
+                    </div>
+
+                    <div class="container-user">
+                        <div class="user-menu">
+                            <i class="fa-solid fa-user"></i>
+                            <ul class="user-dropdown">
+                                <li><a href="cuenta-admin.jsp">Mi cuenta</a></li>
+                                <li><a href="#">Cambiar cuenta</a></li>
+                                <li>
+                                    <a href="index.jsp">
+                                        <i class="fa-solid fa-right-from-bracket"></i> Salir
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-navbar">
+                <nav class="navbar container">
+                    <i class="fa-solid fa-bars"></i>
+                    <ul class="menu">
+                        <li><a href="Controlador?menu=principal-admin">Inicio</a></li>
+                        <li><a href="Controlador?menu=cliente">Cliente</a></li>
+                        <li><a href="Controlador?menu=factura">Facturas</a></li>
+                        <li><a href="Controlador?menu=noticia">Noticias</a></li>
+                        <li><a href="Controlador?menu=proveedor">Proveedores</a></li>
+                        <li><a href="Controlador?menu=juguete">Juguetes</a></li>
+                        <li><a href="Controlador?menu=cuenta">Cuentas</a></li>
+                        <li><a href="Controlador?menu=empleados">Empleados</a></li>
+                        <li><a href="Controlador?menu=carrito">Carritos</a></li>
+                        <li><a href="Controlador?menu=detalles-carritos">Detalles Carritos</a></li>
+                    </ul>
+
+                    <form class="search-form">
+                        <input type="search" placeholder="Buscar..." />
+                        <button class="btn-search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+                </nav>
+            </div>
+        </header>
+            <section class="formulario-container">
+                <main class="main-users">
+            
+                <h1 class="users-title">Proveedores</h1>
+
+                <form class="formulario-detalle">
+                    <div class="form-row">
+                        <label for="nombre-empleado"><strong>Nombre:</strong>
+                        <input type="text" id="nombre-empleado" name="nombre-empleado" placeholder="Ej. Juan" required />
+                        </label>
+                        <label for="apellido-empleado"><strong>Apellido:</strong>
+                        <input type="text" id="apellido-empleado" name="apellido-empleado" placeholder="Ej. Pérez" required />
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="direccion-empleado"><strong>Dirección:</strong>
+                        <input type="text" id="direccion-empleado" name="direccion-empleado" placeholder="Ej. Zona 1, Ciudad" required />
+                        </label>
+                        <label for="telefono-empleado"><strong>Teléfono:</strong>                        <input type="tel" id="telefono-empleado" name="telefono-empleado" placeholder="Ej. 123456789" pattern="[0-9]{8,15}" required />
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="cargo-empleado"><strong>Cargo:</strong>
+                        <input type="text" id="cargo-empleado" name="cargo-empleado" placeholder="Ej. Gerente" required />
+                        </label>
+                        <label for="salario-empleado"><strong>Salario:</strong>
+                        <input type="number" step="0.01" id="salario-empleado" name="salario-empleado" placeholder="Ej. 5999.99" required />
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="dpi-empleado"><strong>DPI:</strong>
+                        <input type="number" id="dpi-empleado" name="dpi-empleado" placeholder="Ej. 1234567890101" required />
+                        </label>
+                    </div>
+                </form>
+
+
+
+                <div class="table-wrapper">
+                    <table class="users-table">
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Nombre</th>
+                                <th>Teléfono</th>
+                                <th>Correo</th>
+                                <th>Dirección</th>
+                            </tr>
+                        </thead>
+                        <tbody id="detalle-proveedor">
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="crud-buttons">
+                    <button class="btn-crud">Agregar</button>
+                    <button class="btn-crud">Listar</button>
+                    <button class="btn-crud">Buscar</button>
+                    <input type="text" class="input-search" placeholder="Ingrese búsqueda" />
+                    <button class="btn-crud">Eliminar</button>
+                    <button class="btn-crud">Actualizar</button>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container container-footer">
+                <div class="menu-footer">
+                    <div class="contact-info">
+                        <p class="title-footer">Información de Contacto</p>
+                        <ul>
+                            <li>Dirección: 71 Pennington Lane Vernon Rockville, CT 06066</li>
+                            <li>Teléfono: 123-456-7890</li>
+                            <li>Fax: 55555300</li>
+                            <li>EmaiL: baristas@support.com</li>
+                        </ul>
+                        <div class="social-icons">
+                            <span class="facebook"><i class="fa-brands fa-facebook-f"></i></span>
+                            <span class="twitter"><i class="fa-brands fa-twitter"></i></span>
+                            <span class="youtube"><i class="fa-brands fa-youtube"></i></span>
+                            <span class="pinterest"><i class="fa-brands fa-pinterest-p"></i></span>
+                            <span class="instagram"><i class="fa-brands fa-instagram"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="information">
+                        <p class="title-footer">Información</p>
+                        <ul>
+                            <li><a href="#">Acerca de Nosotros</a></li>
+                            <li><a href="#">Información Delivery</a></li>
+                            <li><a href="#">Políticas de Privacidad</a></li>
+                            <li><a href="#">Términos y condiciones</a></li>
+                            <li><a href="#">Contáctanos</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="my-account">
+                        <p class="title-footer">Mi cuenta</p>
+                        <ul>
+                            <li><a href="cuenta-admin.jsp">Mi cuenta</a></li>
+                            <li><a href="#">Historial de órdenes</a></li>
+                            <li><a href="#">Lista de deseos</a></li>
+                            <li><a href="#">Boletín</a></li>
+                            <li><a href="#">Reembolsos</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="newsletter">
+                        <p class="title-footer">Boletín informativo</p>
+                        <div class="content">
+                            <p>Suscríbete a nuestros boletines ahora y mantente al día con nuevas colecciones y ofertas exclusivas.</p>
+                            <input type="email" placeholder="Ingresa el correo aquí...">
+                            <button>Suscríbete</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="copyright">
+                    <p>Kinal Toy's &copy; 2025</p>
+                    <img src="img/payment.png" alt="Pagos">
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const checkboxes = document.querySelectorAll('.task-checkbox');
+                const completedCount = document.getElementById('completed-count');
+
+                function updateCount() {
+                    const count = Array.from(checkboxes).filter(cb => cb.checked).length;
+                    completedCount.textContent = count;
+                }
+
+                checkboxes.forEach(cb => {
+                    cb.addEventListener('change', updateCount);
+                });
+
+                const taskForm = document.getElementById('task-form');
+                if (taskForm) {
+                    taskForm.addEventListener('submit', function (e) {
+                        e.preventDefault();
+                        alert('Informe enviado correctamente ?');
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>
